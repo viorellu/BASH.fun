@@ -1,0 +1,16 @@
+clear; echo -n $(tput blink) \>" " ; sleep 1; tput sgr0; echo "Starting attack..."|while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .06;done;echo;done; echo -n $(tput blink) \>" " ; sleep 1; echo "--Hacking NASA--"|while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .06;done;echo;done;for i in $(seq 1 5)
+do
+o=("Daemon" "Dataminer" "R00t access" "Exploit" "Vulnerability")
+a=("implemented" "deployed" "aquired" "conjured" "computed")
+s=$(echo ${o[RANDOM%5]})
+x=$(echo ${a[RANDOM%5]})
+p=$(echo "${i}*20" | bc)
+echo -e "\r\c"
+for n in $(seq 1 ${p})
+do 
+echo -e $(tput sgr0) "Step ${i} of 5: $s $x $(tput setaf 3)$n $(tput bold) $(tput setaf 2)$(echo $RANDOM | md5sum | head -c 20)                  \r\c"
+sleep 0.02
+done
+echo
+echo -e $(tput sgr0)"\e[2A\e[K > --Hacking NASA-- $(tput setaf 6) ${p}%" $(tput setaf 2)
+done; echo "Hacking NASA: SUCCESSFULL." $(tput setaf 1) "WARNING: Incoming Drone Strike Detected." $(tput sgr0); sleep 2
