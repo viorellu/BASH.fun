@@ -1,4 +1,11 @@
-clear; echo -n $(tput blink) \>" " ; sleep 1; tput sgr0; echo "Starting attack..."|while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .06;done;echo;done; echo -n $(tput blink) \>" " ; sleep 1; echo "--Hacking NASA--"|while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .06;done;echo;done;for i in $(seq 1 5)
+clear;\
+echo -n $(tput blink) \>" " ; sleep 1;tput sgr0; t=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1);\
+echo $t |while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .02;done;echo;done;\
+echo -e $(tput blink)"\e[1A\e[K \>" ""Starting attack...""|while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .06;done;echo;done;\
+echo -n $(tput blink) \>" " ; sleep 1;tput sgr0; t=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1);\
+echo $t |while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .02;done;echo;done;\
+echo -e $(tput blink)"\e[1A\e[K \>" ""--Hacking NASA--""|while read x;do for((i=0;i<${#x};i++));do echo -n "${x:$i:1}";sleep .06;done;echo;done;\
+for i in $(seq 1 5)
 do
 o=("Daemon" "Dataminer" "R00t access" "Exploit" "Vulnerability")
 a=("implemented" "deployed" "aquired" "conjured" "computed")
